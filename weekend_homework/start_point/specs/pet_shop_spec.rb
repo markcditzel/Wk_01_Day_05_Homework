@@ -138,7 +138,7 @@ class TestPetShop < Minitest::Test
   end
 
 #9
-  def test_find_pet_by_name__returns_nil
+  def test_find_pet_by_name__returns_nil # cant seem to get fn to return nil!?
     pet = find_pet_by_name(@pet_shop, "Fred")
     assert_nil(pet)
   end

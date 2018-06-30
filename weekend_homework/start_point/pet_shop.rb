@@ -59,8 +59,30 @@ end
 # Function 9
 def find_pet_by_name(arg_pet_shop, pet_name)
   for pet in arg_pet_shop[:pets]
-    if pet[:name] != pet_name
-      return nil
+    if pet[:name] == pet_name
+        return pet
     end
   end
+
+return nil 
 end
+
+# def find_pet_by_name(arg_pet_shop, pet_name)
+#   for pet in arg_pet_shop[:pets]
+#     if pet[:name] == pet_name
+#         return arg_pet_shop[:pet]
+#     else #### WHY does else not work in this loop????
+#       return nil
+#     end
+#   end
+# end
+
+# def find_pet_by_name(arg_pet_shop, pet_name) # this retirns nil:NilClass error
+#   for pet in arg_pet_shop[:pets]
+#     if pet[:name] == pet_name
+#         return arg_pet_shop[:pet]
+#       else
+#         puts "Pet not found"
+#     end
+#   end
+# end
