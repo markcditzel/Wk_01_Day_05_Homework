@@ -166,16 +166,30 @@ end
 
 #Function 17 # utilises same function as 16
 
-#Function 18
+#Function 18 - CANT GET PAST ERROR AT MOMENT
 
-def sell_pet_to_customer(arg_pet_shop, arg_pet_name, arg-customer_id)
+# Attempt1 = TypeError: no implicit conversion of Hash into Array
+# def sell_pet_to_customer(arg_pet_shop, arg_pet_name, arg_customer_id)
+# # maybe define a new hash for the pet to add, then pass into customer pet array
+# pet_to_add_array = [arg_pet_shop[:pets][:name]]
+#   if (customer_can_afford_pet(arg_customer_id, arg_pet_name)) == true
+#     arg_customer_id[:pets]<<pet_to_add_array
+#   end
+# end
 
+#Attempt 2 =    #TypeError: no implicit conversion of Hash into Array
+# def sell_pet_to_customer(arg_pet_shop, arg_pet_name, arg_customer_id) # this returns
+#
+#   if (customer_can_afford_pet(arg_customer_id, arg_pet_name)) == true
+#     arg_customer_id[:pets] += Hash.new(arg_pet_name)
+#   end
+# end
+
+#Musings:
 #do we need to add move the pet from @pet-shop into @new_pet
 # the new entry into @new_pet can then be be accessed by function test customer can afford
-
+#def to move pet from petshop to new pet_type # but isnt @new_pet untouchable?? due to @???
+#once in @new_pet the customer_can_afford_pet function can run
 #determine if customer can afford identified pet_type
-  if (customer_can_afford_pet(arg_customer_id, arg_pet_name))
-    arg_pet_shop[:pets](arg_pet_name) +=
 # if passed, assign pet to customer (@customer array of hashes)
-
-end
+# probaby need to move the new pet out of new pet
