@@ -58,31 +58,65 @@ end
 
 # Function 9
 def find_pet_by_name(arg_pet_shop, pet_name)
-  for pet in arg_pet_shop[:pets]
+  for pet in arg_pet_shop[:pets] ### can I use this syntax?????
     if pet[:name] == pet_name
         return pet
     end
   end
-
-return nil 
+return nil
 end
 
 # def find_pet_by_name(arg_pet_shop, pet_name)
 #   for pet in arg_pet_shop[:pets]
 #     if pet[:name] == pet_name
 #         return arg_pet_shop[:pet]
-#     else #### WHY does else not work in this loop????
+#     else #### ???????WHY does else not work in this loop????
 #       return nil
 #     end
 #   end
 # end
 
-# def find_pet_by_name(arg_pet_shop, pet_name) # this retirns nil:NilClass error
+# Function 10
+#Remove a pet by name, #need a nil return, #need to delete a hash from the pets array
+# Maybe first see if pet is not in hash, then if not procees with delete
+# Or when there is no match return nil; otherwise proceed with delete function?
+
+def remove_pet_by_name(arg_pet_shop, arg_pet_name)
+  for pet in arg_pet_shop[:pets]
+    if pet[:name] == arg_pet_name
+      arg_pet_shop[:pets].delete pet
+    end
+  end
+end
+
+# #FAILED did not return nil
+# def remove_pet_by_name(arg_pet_shop, arg_pet_name)
 #   for pet in arg_pet_shop[:pets]
-#     if pet[:name] == pet_name
-#         return arg_pet_shop[:pet]
-#       else
-#         puts "Pet not found"
+#     if pet[:name] == arg_pet_name
+#       arg_pet_shop[:pets].delete (arg_pet_name)
 #     end
 #   end
 # end
+
+#Did not work
+# def remove_pet_by_name(arg_pet_shop, arg_pet_name)
+#   for pet in arg_pet_shop[:pets]
+#     if pet[:name] == arg_pet_name
+#       arg_pet_shop[:pets][:name].delete (arg_pet_name)
+#     end
+#   end
+# end
+
+#DID NOT WORK
+# def remove_pet_by_name(arg_pet_shop, pet_name)
+#   for pet in arg_pet_shop[:pets]
+#     if pet[:name] != pet_name
+#       #arg_pet_shop[:pet] = arg_pet_shop[:pet].delete(pet_name)
+#       arg_pet_shop[:pets][:name].delete([:pets][:name][pet_name]
+#     end
+#   end
+#
+# return nil
+# end
+
+#Function 11
