@@ -58,7 +58,7 @@ end
 
 # Function 9
 def find_pet_by_name(arg_pet_shop, pet_name)
-  for pet in arg_pet_shop[:pets] ### can I use this syntax?????
+  for pet in arg_pet_shop[:pets]
     if pet[:name] == pet_name
         return pet
     end
@@ -119,4 +119,30 @@ end
 # return nil
 # end
 
-#Function 11
+#Function 11 add a pet to stock list; input pet shop, insert new put pre-defined @new pet, creat array and then count it, return the number
+
+def add_pet_to_stock(arg_pet_shop, arg_new_pet)
+  arg_pet_shop[:pets]<< arg_new_pet
+end
+
+#Function 12
+
+def customer_cash(arg_customer_id)
+  return arg_customer_id[:cash]
+end
+
+# Function 13 # access Alice. removes 100, return use customer cash function
+
+def remove_customer_cash(arg_customer_id, sum_to_remove)
+  arg_customer_id[:cash] -= (sum_to_remove)
+end
+
+#Function 14 # count the number of pets owned by a certain customer
+def customer_pet_count(arg_customer_id)
+  arg_customer_id[:pets].count
+end
+
+#Function 15
+def add_pet_to_customer(arg_customer_id, arg_add_pet)
+  arg_customer_id[:pets]<<(arg_add_pet)
+end

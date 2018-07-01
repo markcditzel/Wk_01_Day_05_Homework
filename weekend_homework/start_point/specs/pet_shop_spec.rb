@@ -18,7 +18,7 @@ class TestPetShop < Minitest::Test
       }
     ]
 
-    @new_pet = { # this is a hash for entering new pets int something
+    @new_pet = { # this is a hash for entering new pets into a pre-existing list
       name: "Bors the Younger",
       pet_type: :cat,
       breed: "Cornish Rex",
@@ -150,38 +150,38 @@ class TestPetShop < Minitest::Test
     assert_nil(pet)
   end
 
-#11
-  # def test_add_pet_to_stock
-  #   add_pet_to_stock(@pet_shop, @new_pet)
-  #   count = stock_count(@pet_shop)
-  #   assert_equal(7, count)
-  # end
+#11 add a pet to stock list; input pet shop, insert new put pre-defined @new pet, creat array and then count it, return the number
+  def test_add_pet_to_stock
+    add_pet_to_stock(@pet_shop, @new_pet)
+    count = stock_count(@pet_shop)
+    assert_equal(7, count)
+  end
 
-#12
-  # def test_customer_cash
-  #   cash = customer_cash(@customers[0])
-  #   assert_equal(1000, cash)
-  # end
+#12 accessing an array of customer hashes, drill down and return cash amount
+  def test_customer_cash
+    cash = customer_cash(@customers[0])#posion 0 in array = Alice = 1000
+    assert_equal(1000, cash)
+  end
 
 #13
-  # def test_remove_customer_cash
-  #   customer = @customers[0]
-  #   remove_customer_cash(customer, 100)
-  #   assert_equal(900, customer[:cash])
-  # end
+  def test_remove_customer_cash # access Alice. removes 100, return use customer cash function
+    customer = @customers[0]
+    remove_customer_cash(customer, 100)
+    assert_equal(900, customer[:cash])
+  end
 
-#14
-  # def test_customer_pet_count
-  #   count = customer_pet_count(@customers[0])
-  #   assert_equal(0, count)
-  # end
+# 14 # count the number of pets owned by a certain customer
+  def test_customer_pet_count
+    count = customer_pet_count(@customers[0])
+    assert_equal(0, count)
+  end
 
 #15
-  # def test_add_pet_to_customer
-  #   customer = @customers[0]
-  #   add_pet_to_customer(customer, @new_pet)
-  #   assert_equal(1, customer_pet_count(customer))
-  # end
+  def test_add_pet_to_customer # add pre-defined pet hash to customer in array of hashes
+    customer = @customers[0]
+    add_pet_to_customer(customer, @new_pet)
+    assert_equal(1, customer_pet_count(customer))
+  end
 
   #------------------# # OPTIONAL
 
