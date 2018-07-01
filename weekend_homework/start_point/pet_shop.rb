@@ -146,3 +146,36 @@ end
 def add_pet_to_customer(arg_customer_id, arg_add_pet)
   arg_customer_id[:pets]<<(arg_add_pet)
 end
+
+#OPTIONAL FUNCTIONS --------
+
+#Function 16 # acces customer; compare cost and customer credit, assign if can (true) or cannot afford (false)
+
+def customer_can_afford_pet(arg_customer_id, arg_pet_to_be_purchased)
+  #access customer cash, using pre-existing function 'customer_cash(arg_customer_id)'
+  #!!!! Convert into regular expression !!!!
+  available_funds = customer_cash(arg_customer_id)
+  #access pet cost
+  cost_of_pet = arg_pet_to_be_purchased[:price]
+# if statement to return tru or fasle (prob use regular expression?)
+  if available_funds - cost_of_pet >= 0
+    return true
+  end
+  return false
+end
+
+#Function 17 # utilises same function as 16
+
+#Function 18
+
+def sell_pet_to_customer(arg_pet_shop, arg_pet_name, arg-customer_id)
+
+#do we need to add move the pet from @pet-shop into @new_pet
+# the new entry into @new_pet can then be be accessed by function test customer can afford
+
+#determine if customer can afford identified pet_type
+  if (customer_can_afford_pet(arg_customer_id, arg_pet_name))
+    arg_pet_shop[:pets](arg_pet_name) +=
+# if passed, assign pet to customer (@customer array of hashes)
+
+end

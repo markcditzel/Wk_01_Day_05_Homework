@@ -186,33 +186,34 @@ class TestPetShop < Minitest::Test
   #------------------# # OPTIONAL
 
 #16
-  # def test_customer_can_afford_pet__insufficient_funds
-  #   customer = @customers[1]
-  #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-  #   assert_equal(false, can_buy_pet)
-  # end
+  def test_customer_can_afford_pet__insufficient_funds # acces customer; compare cost and customer credit, assign if can (true) or cannot afford (false)
+    customer = @customers[1]
+    can_buy_pet = customer_can_afford_pet(customer, @new_pet)
+    assert_equal(false, can_buy_pet)
+  end
 
 #17
-  # def test_customer_can_afford_pet__sufficient_funds
-  #   customer = @customers[0]
-  #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-  #   assert_equal(true, can_buy_pet)
-  # end
+  def test_customer_can_afford_pet__sufficient_funds
+    customer = @customers[0]
+    can_buy_pet = customer_can_afford_pet(customer, @new_pet)
+    assert_equal(true, can_buy_pet)
+  end
 
 #18
-  # #These are 'integration' tests so we want multiple asserts.
-  # #If one fails the entire test should fail
-  # def test_sell_pet_to_customer__pet_found
-  #   customer = @customers[0]
-  #   pet = find_pet_by_name(@pet_shop,"Arthur")
+  #These are 'integration' tests so we want multiple asserts.
+  #If one fails the entire test should fail
 
-  #   sell_pet_to_customer(@pet_shop, pet, customer)
+  def test_sell_pet_to_customer__pet_found
+    customer = @customers[0]
+    pet = find_pet_by_name(@pet_shop,"Arthur")# pre-exising function #9
 
-  #   assert_equal(1, customer_pet_count(customer))
-  #   assert_equal(1, pets_sold(@pet_shop))
-  #   assert_equal(100, customer_cash(customer))
-  #   assert_equal(1900, total_cash(@pet_shop))
-  # end
+    sell_pet_to_customer(@pet_shop, pet, customer)# need to define this function
+
+    assert_equal(1, customer_pet_count(customer))#pre-existing
+    assert_equal(1, pets_sold(@pet_shop))#pre-existing
+    assert_equal(100, customer_cash(customer))#pre-existing
+    assert_equal(1900, total_cash(@pet_shop))#pre-existing
+  end
 
 #19
   # def test_sell_pet_to_customer__pet_not_found
